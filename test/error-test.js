@@ -35,3 +35,7 @@ write(stream, '"dangling" "values"');
 stream = JSONStream();
 expectError(stream, [ /unexpected token/i ]);
 write(stream, '{unquoted: "object key"}');
+
+stream = JSONStream();
+expectError(stream, [ /unexpected number/i ]);
+write(stream, '{"thro', 'ws": "when", "spanning": "multiple chunks"} 5');
