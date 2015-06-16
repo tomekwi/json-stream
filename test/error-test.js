@@ -38,4 +38,4 @@ write(stream, '{unquoted: "object key"}');
 
 stream = JSONStream();
 expectError(stream, [ /unexpected number/i ]);
-write(stream, '{"thro', 'ws": "when", "spanning": "multiple chunks"} 5');
+write(stream, '{"throws": "when", "spanning": "multiple chunks"} 5');
